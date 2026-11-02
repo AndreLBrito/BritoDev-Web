@@ -259,6 +259,10 @@ h1 span {
 }
 
 @media (max-width: 38rem) {
+  .visual-orbit {
+    inset-inline: 0;
+  }
+
   .stack-card {
     right: 0;
   }
