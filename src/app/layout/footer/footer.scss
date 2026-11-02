@@ -1,13 +1,91 @@
-@use '../../../styles/tokens' as tokens;
-
 footer {
-  border-top: 1px solid tokens.$color-border;
-  background: tokens.$color-surface;
+  border-top: 1px solid var(--color-border);
+  background: #090a10;
+}
+
+.footer-content {
+  display: flex;
+  padding-block: 3.5rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.footer-brand {
+  display: flex;
+  max-width: 30rem;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.footer-brand > svg {
+  width: 2rem;
+  height: 2rem;
+  color: var(--color-lime);
+}
+
+strong {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
 }
 
 p {
-  width: min(100% - #{tokens.$space-8}, tokens.$content-max-width);
-  margin: 0 auto;
-  padding-block: tokens.$space-6;
-  color: tokens.$color-text-muted;
+  margin: 0.35rem 0 0;
+  color: var(--color-text-muted);
+}
+
+nav {
+  display: flex;
+  gap: 0.75rem;
+}
+
+nav a {
+  display: inline-flex;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+nav a:hover {
+  border-color: var(--color-purple);
+  color: var(--color-purple);
+}
+
+nav svg {
+  width: 1rem;
+}
+
+.footer-bottom {
+  display: flex;
+  padding-block: 1.25rem;
+  border-top: 1px solid var(--color-border);
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.8125rem;
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+.footer-bottom a {
+  color: var(--color-text-muted);
+  text-decoration: none;
+}
+
+.footer-bottom a:hover {
+  color: var(--color-cyan);
+}
+
+@media (max-width: 42rem) {
+  .footer-content,
+  .footer-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+  }
 }

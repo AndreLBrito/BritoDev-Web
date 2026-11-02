@@ -1,15 +1,37 @@
 <header class="site-header">
   <a class="skip-link" href="#main-content">Ir para o conteúdo</a>
-  <div class="header-content">
-    <a class="brand" routerLink="/" aria-label="BritoDev — página inicial">BritoDev</a>
-    <nav aria-label="Navegação principal">
+  <div class="header-content container">
+    <a class="brand" routerLink="/" aria-label="BritoDev — página inicial" (click)="closeMenu()">
+      <span class="brand-mark" aria-hidden="true">B</span>
+      <span>Brito<span>Dev</span></span>
+    </a>
+
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-controls="main-navigation"
+      [attr.aria-expanded]="isMenuOpen()"
+      [attr.aria-label]="isMenuOpen() ? 'Fechar menu' : 'Abrir menu'"
+      (click)="toggleMenu()"
+    >
+      @if (isMenuOpen()) {
+        <svg lucideX aria-hidden="true"></svg>
+      } @else {
+        <svg lucideMenu aria-hidden="true"></svg>
+      }
+    </button>
+
+    <nav id="main-navigation" aria-label="Navegação principal" [class.is-open]="isMenuOpen()">
       <ul>
-        <li><a routerLink="/" fragment="presentation">Início</a></li>
-        <li><a routerLink="/" fragment="services">Serviços</a></li>
-        <li><a routerLink="/" fragment="solutions">Soluções</a></li>
-        <li><a routerLink="/" fragment="projects">Projetos</a></li>
-        <li><a routerLink="/" fragment="about">Sobre</a></li>
-        <li><a routerLink="/" fragment="contact">Contato</a></li>
+        <li><a routerLink="/" fragment="services" (click)="closeMenu()">Serviços</a></li>
+        <li><a routerLink="/" fragment="solutions" (click)="closeMenu()">Como trabalho</a></li>
+        <li><a routerLink="/" fragment="projects" (click)="closeMenu()">Projetos</a></li>
+        <li><a routerLink="/" fragment="about" (click)="closeMenu()">Sobre</a></li>
+        <li>
+          <a class="nav-cta" routerLink="/" fragment="contact" (click)="closeMenu()">
+            Vamos conversar
+          </a>
+        </li>
       </ul>
     </nav>
   </div>

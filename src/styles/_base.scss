@@ -1,5 +1,28 @@
 @use 'tokens' as tokens;
 
+:root {
+  color-scheme: dark;
+  --color-background: #{tokens.$color-background};
+  --color-background-soft: #{tokens.$color-background-soft};
+  --color-surface: #{tokens.$color-surface};
+  --color-surface-strong: #{tokens.$color-surface-strong};
+  --color-text: #{tokens.$color-text};
+  --color-text-muted: #{tokens.$color-text-muted};
+  --color-border: #{tokens.$color-border};
+  --color-purple: #{tokens.$color-purple};
+  --color-cyan: #{tokens.$color-cyan};
+  --color-lime: #{tokens.$color-lime};
+  --color-coral: #{tokens.$color-coral};
+  --font-base: #{tokens.$font-family-base};
+  --font-display: #{tokens.$font-family-display};
+  --font-mono: #{tokens.$font-family-mono};
+  --content-width: #{tokens.$content-max-width};
+  --content-narrow: #{tokens.$content-narrow-width};
+  --radius-small: #{tokens.$border-radius-small};
+  --radius: #{tokens.$border-radius};
+  --radius-large: #{tokens.$border-radius-large};
+}
+
 *,
 *::before,
 *::after {
@@ -8,29 +31,179 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
 }
 
 body {
   min-width: 20rem;
   margin: 0;
-  background: tokens.$color-background;
-  color: tokens.$color-text;
-  font-family: tokens.$font-family-base;
+  background:
+    radial-gradient(circle at 15% -10%, rgba(157, 123, 255, 0.16), transparent 32rem),
+    radial-gradient(circle at 95% 20%, rgba(71, 215, 255, 0.09), transparent 30rem),
+    var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-base);
   font-size: tokens.$font-size-base;
   line-height: tokens.$line-height-base;
+  text-rendering: optimizelegibility;
 }
 
 a {
-  color: tokens.$color-accent;
+  color: inherit;
 }
 
-a:focus-visible {
-  outline: 0.1875rem solid tokens.$color-accent;
-  outline-offset: tokens.$space-1;
+a:focus-visible,
+button:focus-visible {
+  outline: 0.1875rem solid var(--color-cyan);
+  outline-offset: 0.25rem;
 }
 
 h1,
 h2,
+h3,
 p {
   margin-block-start: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  letter-spacing: -0.035em;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  font: inherit;
+}
+
+img,
+svg {
+  display: block;
+}
+
+img {
+  max-width: 100%;
+}
+
+::selection {
+  background: var(--color-lime);
+  color: var(--color-background);
+}
+
+.container {
+  width: min(100% - 2rem, var(--content-width));
+  margin-inline: auto;
+}
+
+.section {
+  position: relative;
+  padding-block: clamp(5rem, 10vw, 8rem);
+}
+
+.eyebrow {
+  display: inline-flex;
+  margin-bottom: 1rem;
+  align-items: center;
+  gap: 0.625rem;
+  color: var(--color-cyan);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  width: 1.75rem;
+  height: 0.125rem;
+  background: currentcolor;
+  content: '';
+}
+
+.section-heading {
+  max-width: 48rem;
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+.section-heading h2 {
+  max-width: 15ch;
+  margin-bottom: 1rem;
+  font-size: clamp(2.35rem, 6vw, 4.75rem);
+  line-height: 0.98;
+}
+
+.section-heading p {
+  max-width: 42rem;
+  margin-bottom: 0;
+  color: var(--color-text-muted);
+  font-size: clamp(1rem, 2vw, 1.15rem);
+}
+
+.button {
+  display: inline-flex;
+  min-height: 3.25rem;
+  padding: 0.75rem 1.25rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  font-weight: 750;
+  text-decoration: none;
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease;
+}
+
+.button:hover {
+  transform: translateY(-0.125rem);
+}
+
+.button-primary {
+  background: var(--color-lime);
+  color: #101407;
+}
+
+.button-secondary {
+  border-color: var(--color-border);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--color-text);
+}
+
+.button-secondary:hover {
+  border-color: var(--color-cyan);
+  background: rgba(71, 215, 255, 0.08);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
 }
