@@ -1,0 +1,36 @@
+@use 'tokens' as tokens;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 20rem;
+  margin: 0;
+  background: tokens.$color-background;
+  color: tokens.$color-text;
+  font-family: tokens.$font-family-base;
+  font-size: tokens.$font-size-base;
+  line-height: tokens.$line-height-base;
+}
+
+a {
+  color: tokens.$color-accent;
+}
+
+a:focus-visible {
+  outline: 0.1875rem solid tokens.$color-accent;
+  outline-offset: tokens.$space-1;
+}
+
+h1,
+h2,
+p {
+  margin-block-start: 0;
+}

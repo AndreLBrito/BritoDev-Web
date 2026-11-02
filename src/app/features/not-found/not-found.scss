@@ -1,0 +1,7 @@
+@use '../../../styles/tokens' as tokens;
+
+section {
+  width: min(100% - #{tokens.$space-8}, tokens.$content-max-width);
+  margin-inline: auto;
+  padding-block: tokens.$space-16;
+}

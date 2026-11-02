@@ -1,0 +1,13 @@
+@use '../../../styles/tokens' as tokens;
+
+footer {
+  border-top: 1px solid tokens.$color-border;
+  background: tokens.$color-surface;
+}
+
+p {
+  width: min(100% - #{tokens.$space-8}, tokens.$content-max-width);
+  margin: 0 auto;
+  padding-block: tokens.$space-6;
+  color: tokens.$color-text-muted;
+}

@@ -1,0 +1,32 @@
+@use '../../../styles/tokens' as tokens;
+
+.home-content {
+  width: min(100% - #{tokens.$space-8}, tokens.$content-max-width);
+  margin-inline: auto;
+}
+
+section {
+  min-height: 18rem;
+  padding-block: tokens.$space-12;
+  border-bottom: 1px solid tokens.$color-border;
+  scroll-margin-top: tokens.$space-4;
+}
+
+section:last-child {
+  border-bottom: 0;
+}
+
+.section-label {
+  color: tokens.$color-text-muted;
+}
+
+h1,
+h2 {
+  line-height: 1.2;
+}
+
+@media (min-width: 48rem) {
+  section {
+    padding-block: tokens.$space-16;
+  }
+}
