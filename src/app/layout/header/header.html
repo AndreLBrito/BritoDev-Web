@@ -1,7 +1,7 @@
 <header class="site-header">
   <a class="skip-link" href="#main-content">Ir para o conteúdo</a>
   <div class="header-content container">
-    <a class="brand" routerLink="/" aria-label="BritoDev — página inicial" (click)="closeMenu()">
+    <a class="brand" href="/" aria-label="BritoDev — página inicial" (click)="closeMenu()">
       <span class="brand-mark" aria-hidden="true">B</span>
       <span>Brito<span>Dev</span></span>
     </a>
@@ -23,14 +23,12 @@
 
     <nav id="main-navigation" aria-label="Navegação principal" [class.is-open]="isMenuOpen()">
       <ul>
-        <li><a routerLink="/" fragment="services" (click)="closeMenu()">Serviços</a></li>
-        <li><a routerLink="/" fragment="solutions" (click)="closeMenu()">Como trabalho</a></li>
-        <li><a routerLink="/" fragment="projects" (click)="closeMenu()">Projetos</a></li>
-        <li><a routerLink="/" fragment="about" (click)="closeMenu()">Sobre</a></li>
+        <li><a href="/#services" (click)="closeMenu()">Serviços</a></li>
+        <li><a href="/#solutions" (click)="closeMenu()">Como trabalho</a></li>
+        <li><a href="/#projects" (click)="closeMenu()">Projetos</a></li>
+        <li><a href="/#about" (click)="closeMenu()">Sobre</a></li>
         <li>
-          <a class="nav-cta" routerLink="/" fragment="contact" (click)="closeMenu()">
-            Vamos conversar
-          </a>
+          <a class="nav-cta" href="/#contact" (click)="closeMenu()"> Vamos conversar </a>
         </li>
       </ul>
     </nav>

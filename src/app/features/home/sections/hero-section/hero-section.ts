@@ -5,10 +5,9 @@ import {
   LucideMapPin,
   LucideSparkles,
 } from '@lucide/angular';
-import { RouterLink } from '@angular/router';
 
 @Component({
-  imports: [LucideArrowRight, LucideBriefcaseBusiness, LucideMapPin, LucideSparkles, RouterLink],
+  imports: [LucideArrowRight, LucideBriefcaseBusiness, LucideMapPin, LucideSparkles],
   selector: 'app-hero-section',
   styleUrl: './hero-section.scss',
   templateUrl: './hero-section.html',
