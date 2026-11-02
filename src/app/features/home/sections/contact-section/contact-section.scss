@@ -1,0 +1,143 @@
+.contact {
+  padding-block: clamp(4rem, 9vw, 7rem);
+  background: var(--color-background-soft);
+}
+
+.contact-card {
+  position: relative;
+  display: grid;
+  padding: clamp(2rem, 7vw, 5.5rem);
+  overflow: hidden;
+  border: 1px solid rgba(157, 123, 255, 0.35);
+  border-radius: clamp(1.5rem, 4vw, 3rem);
+  align-items: center;
+  gap: clamp(3rem, 8vw, 7rem);
+  background:
+    radial-gradient(circle at 5% 0, rgba(157, 123, 255, 0.28), transparent 28rem),
+    radial-gradient(circle at 100% 100%, rgba(71, 215, 255, 0.15), transparent 25rem),
+    var(--color-surface);
+  grid-template-columns: minmax(0, 1.15fr) minmax(18rem, 0.85fr);
+}
+
+.contact-card::before {
+  position: absolute;
+  top: -8rem;
+  right: -8rem;
+  width: 18rem;
+  aspect-ratio: 1;
+  border: 1px solid rgba(183, 243, 75, 0.28);
+  border-radius: 50%;
+  content: '';
+}
+
+.contact-copy {
+  position: relative;
+  z-index: 1;
+}
+
+.contact-copy h2 {
+  max-width: 11ch;
+  margin-bottom: 1.25rem;
+  font-size: clamp(2.7rem, 6.5vw, 5.75rem);
+  line-height: 0.95;
+}
+
+.contact-copy > p:not(.eyebrow, .location) {
+  max-width: 38rem;
+  color: var(--color-text-muted);
+  font-size: 1.08rem;
+}
+
+.contact-actions {
+  display: flex;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.contact-actions svg {
+  width: 1.1rem;
+}
+
+.contact-secondary {
+  border-color: var(--color-border);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.contact-secondary:hover {
+  border-color: var(--color-cyan);
+}
+
+.location {
+  display: inline-flex;
+  margin: 1.5rem 0 0;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+}
+
+.location svg {
+  width: 0.9rem;
+  color: var(--color-cyan);
+}
+
+.contact-brief {
+  position: relative;
+  z-index: 1;
+  padding: 1.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-large);
+  background: rgba(7, 8, 13, 0.68);
+  backdrop-filter: blur(1rem);
+}
+
+.contact-brief > span {
+  color: var(--color-lime);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.contact-brief h3 {
+  margin: 0.6rem 0 1.25rem;
+  font-size: 1.5rem;
+}
+
+.contact-brief ul {
+  display: grid;
+  margin: 0;
+  gap: 0.85rem;
+  padding: 0;
+  list-style: none;
+}
+
+.contact-brief li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+.contact-brief svg {
+  width: 1rem;
+  flex: 0 0 auto;
+  color: var(--color-lime);
+}
+
+@media (max-width: 54rem) {
+  .contact-card {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 34rem) {
+  .contact-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}
