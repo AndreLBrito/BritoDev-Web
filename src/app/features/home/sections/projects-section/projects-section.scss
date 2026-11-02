@@ -1,0 +1,381 @@
+.projects {
+  background: var(--color-background-soft);
+}
+
+.projects-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.all-projects-link {
+  display: inline-flex;
+  margin-bottom: 4rem;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-lime);
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.all-projects-link svg {
+  width: 1rem;
+}
+
+.projects-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.project-card {
+  --project-accent: var(--color-purple);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-large);
+  background: var(--color-surface);
+}
+
+.project-card--pricewise-api {
+  --project-accent: var(--color-lime);
+}
+
+.project-card--pricewise-web {
+  --project-accent: var(--color-cyan);
+  grid-column: 1 / -1;
+}
+
+.project-visual {
+  position: relative;
+  display: flex;
+  min-height: 17rem;
+  padding: 2rem;
+  overflow: hidden;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 0.75rem;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    radial-gradient(
+      circle at 50% 0,
+      color-mix(in srgb, var(--project-accent) 28%, transparent),
+      transparent 68%
+    );
+  background-size:
+    1.5rem 1.5rem,
+    1.5rem 1.5rem,
+    auto;
+}
+
+.kanban-column {
+  width: 27%;
+  min-height: 9rem;
+  padding: 0.65rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0.75rem;
+  background: rgba(7, 8, 13, 0.82);
+  transform: translateY(1rem) rotate(-3deg);
+}
+
+.kanban-column--active {
+  min-height: 12rem;
+  border-color: var(--project-accent);
+  transform: translateY(0) rotate(2deg);
+}
+
+.kanban-column i {
+  display: block;
+  height: 2.1rem;
+  margin-bottom: 0.45rem;
+  border-radius: 0.35rem;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.kanban-column--active i:first-child {
+  background: color-mix(in srgb, var(--project-accent) 25%, transparent);
+}
+
+.api-node {
+  position: absolute;
+  top: 2.25rem;
+  left: 50%;
+  display: grid;
+  width: 4rem;
+  aspect-ratio: 1;
+  border: 1px solid var(--project-accent);
+  border-radius: 50%;
+  background: rgba(183, 243, 75, 0.09);
+  color: var(--project-accent);
+  place-items: center;
+  transform: translateX(-50%);
+}
+
+.api-node svg {
+  width: 1.4rem;
+}
+
+.project-card--pricewise-api .project-visual > span {
+  position: absolute;
+  top: 6.5rem;
+  left: 50%;
+  width: 1px;
+  height: 4rem;
+  background: linear-gradient(var(--project-accent), transparent);
+  transform: rotate(40deg);
+  transform-origin: top;
+}
+
+.project-card--pricewise-api .project-visual > span:nth-of-type(2) {
+  transform: rotate(0deg);
+}
+
+.project-card--pricewise-api .project-visual > span:nth-of-type(3) {
+  transform: rotate(-40deg);
+}
+
+.chart-bars {
+  display: flex;
+  height: 6rem;
+  align-items: end;
+  gap: 0.5rem;
+}
+
+.chart-bars i {
+  width: 1.5rem;
+  height: 35%;
+  border-radius: 0.25rem 0.25rem 0 0;
+  background: color-mix(in srgb, var(--project-accent) 30%, transparent);
+}
+
+.chart-bars i:nth-child(2) {
+  height: 65%;
+}
+
+.chart-bars i:nth-child(3) {
+  height: 48%;
+}
+
+.chart-bars i:nth-child(4) {
+  height: 82%;
+}
+
+.chart-bars i:nth-child(5) {
+  height: 100%;
+  background: var(--project-accent);
+}
+
+.dashboard-visual {
+  min-height: 20rem;
+  align-items: stretch;
+  justify-content: stretch;
+}
+
+.dashboard-sidebar {
+  width: 18%;
+  border-radius: 0.75rem;
+  background: rgba(7, 8, 13, 0.85);
+}
+
+.dashboard-main {
+  display: grid;
+  flex: 1;
+  gap: 0.75rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.dashboard-main i,
+.dashboard-main b {
+  border: 1px solid var(--color-border);
+  border-radius: 0.75rem;
+  background: rgba(7, 8, 13, 0.7);
+}
+
+.dashboard-main i:nth-child(2) {
+  border-color: var(--project-accent);
+  background: color-mix(in srgb, var(--project-accent) 12%, transparent);
+}
+
+.dashboard-main b {
+  position: relative;
+  min-height: 8rem;
+  grid-column: 1 / -1;
+}
+
+.dashboard-main b::after {
+  position: absolute;
+  right: 8%;
+  bottom: 20%;
+  left: 8%;
+  height: 45%;
+  border-bottom: 2px solid var(--project-accent);
+  border-left: 2px solid transparent;
+  content: '';
+  transform: skewY(-8deg);
+}
+
+.project-content {
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.project-topline {
+  display: flex;
+  margin-bottom: 1.5rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  color: var(--project-accent);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.project-topline svg {
+  width: 1.2rem;
+}
+
+.project-content h3 {
+  margin-bottom: 0.75rem;
+  font-size: clamp(2rem, 4vw, 3.25rem);
+}
+
+.project-content p {
+  color: var(--color-text-muted);
+}
+
+.project-content ul {
+  display: flex;
+  margin: 1.5rem 0;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.project-content li {
+  padding: 0.4rem 0.65rem;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+}
+
+.project-content a,
+.code-lab a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--project-accent);
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.project-content a:hover,
+.code-lab a:hover {
+  text-decoration: underline;
+}
+
+.project-content a svg,
+.code-lab a svg {
+  width: 1rem;
+}
+
+.code-lab {
+  display: grid;
+  margin-top: 1.25rem;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-large);
+  align-items: center;
+  gap: 1.5rem;
+  grid-template-columns: auto 1fr auto;
+}
+
+.code-lab > svg {
+  width: 2rem;
+  color: var(--color-coral);
+}
+
+.code-lab span {
+  color: var(--color-coral);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.code-lab h3 {
+  margin: 0.25rem 0;
+  font-size: 1.35rem;
+}
+
+.code-lab p {
+  margin-bottom: 0;
+  color: var(--color-text-muted);
+}
+
+.code-lab a {
+  --project-accent: var(--color-coral);
+  white-space: nowrap;
+}
+
+@media (max-width: 48rem) {
+  .projects-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .all-projects-link {
+    margin-top: -2rem;
+    margin-bottom: 3rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card--pricewise-web {
+    grid-column: auto;
+  }
+
+  .dashboard-sidebar {
+    display: none;
+  }
+
+  .dashboard-main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dashboard-main i:nth-child(3) {
+    display: none;
+  }
+
+  .code-lab {
+    align-items: start;
+    grid-template-columns: auto 1fr;
+  }
+
+  .code-lab a {
+    grid-column: 2;
+  }
+}
+
+@media (max-width: 32rem) {
+  .project-visual {
+    min-height: 14rem;
+    padding: 1rem;
+  }
+
+  .code-lab {
+    grid-template-columns: 1fr;
+  }
+
+  .code-lab a {
+    grid-column: auto;
+  }
+}

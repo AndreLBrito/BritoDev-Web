@@ -1,0 +1,124 @@
+.process {
+  background:
+    linear-gradient(90deg, transparent 49.9%, rgba(255, 255, 255, 0.04) 50%, transparent 50.1%),
+    var(--color-background);
+}
+
+.process-intro {
+  display: grid;
+  margin-bottom: clamp(3rem, 7vw, 6rem);
+  align-items: end;
+  gap: 2rem;
+  grid-template-columns: 1.2fr 0.8fr;
+}
+
+.process-intro .section-heading {
+  margin-bottom: 0;
+}
+
+.process-lead {
+  margin-bottom: 0;
+  color: var(--color-text-muted);
+  font-size: 1.05rem;
+}
+
+.process-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.process-list li {
+  display: grid;
+  padding-block: 2rem;
+  border-top: 1px solid var(--color-border);
+  align-items: start;
+  gap: 1.25rem;
+  grid-template-columns: 3rem 4rem 1fr;
+}
+
+.process-list li:last-child {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.step-number {
+  padding-top: 0.7rem;
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+}
+
+.step-icon {
+  display: grid;
+  width: 3.5rem;
+  aspect-ratio: 1;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  color: var(--color-cyan);
+  place-items: center;
+}
+
+.step-icon svg {
+  width: 1.25rem;
+}
+
+.process-list h3 {
+  margin-bottom: 0.4rem;
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+}
+
+.process-list p {
+  max-width: 43rem;
+  margin-bottom: 0;
+  color: var(--color-text-muted);
+}
+
+.process-list li:nth-child(2) .step-icon {
+  color: var(--color-purple);
+}
+
+.process-list li:nth-child(3) .step-icon {
+  color: var(--color-lime);
+}
+
+.process-list li:nth-child(4) .step-icon {
+  color: var(--color-coral);
+}
+
+.process-note {
+  display: flex;
+  max-width: 48rem;
+  margin: 3rem 0 0 auto;
+  padding: 1.25rem 1.5rem;
+  border-left: 3px solid var(--color-lime);
+  background: rgba(183, 243, 75, 0.05);
+  gap: 0.75rem;
+}
+
+.process-note span {
+  color: var(--color-lime);
+  font-family: var(--font-mono);
+  font-weight: 800;
+}
+
+.process-note p {
+  margin: 0;
+}
+
+@media (max-width: 44rem) {
+  .process {
+    background: var(--color-background);
+  }
+
+  .process-intro {
+    grid-template-columns: 1fr;
+  }
+
+  .process-list li {
+    grid-template-columns: 2rem 3rem 1fr;
+  }
+
+  .step-icon {
+    width: 2.75rem;
+  }
+}
