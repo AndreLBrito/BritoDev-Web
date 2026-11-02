@@ -1,6 +1,17 @@
 # BritoDev-Web
 
-Estrutura inicial do site profissional da BritoDev, marca de André Brito. Esta etapa contém apenas a base técnica e um esqueleto navegável; o conteúdo comercial e a identidade visual serão desenvolvidos posteriormente.
+Site profissional da BritoDev, marca de André Brito para desenvolvimento de sites, sistemas, automações, integrações e manutenção de software.
+
+O site apresenta serviços para pequenas empresas e profissionais, além de apoio técnico para software houses e agências que trabalham com C#/.NET, Delphi e Lazarus.
+
+## Tecnologias
+
+- Angular 22 com componentes standalone e carregamento lazy.
+- TypeScript em modo strict.
+- Angular Router com navegação por âncoras.
+- SCSS com tokens de design e estilos encapsulados por componente.
+- Lucide Angular para ícones vetoriais carregados seletivamente.
+- ESLint, Prettier e EditorConfig para qualidade e consistência.
 
 ## Pré-requisitos
 
@@ -21,7 +32,7 @@ npm install
 npm start
 ```
 
-O servidor de desenvolvimento informa no terminal o endereço local da aplicação.
+Por padrão, o servidor de desenvolvimento fica disponível em `http://localhost:4200`.
 
 ## Validação
 
@@ -39,13 +50,15 @@ npm run format
 
 ## Estrutura
 
-- `src/app/layout`: composição estrutural do site, cabeçalho e rodapé.
-- `src/app/features`: páginas carregadas pelo roteador, organizadas por funcionalidade.
-- `src/app/shared`: reservado para código que venha a ser realmente compartilhado; não é criado enquanto não houver esse uso.
-- `src/styles`: tokens provisórios e estilos globais básicos.
-- `public/images` e `public/icons`: ativos estáticos futuros.
-- `docs/architecture.md`: decisões técnicas desta etapa.
+- `src/app/layout`: cabeçalho, rodapé e composição estrutural persistente.
+- `src/app/features/home/sections`: seções independentes da página inicial.
+- `src/app/features/not-found`: experiência para rotas inexistentes.
+- `src/styles`: tokens visuais e estilos globais essenciais.
+- `public/images` e `public/icons`: fotografia e identidade visual estática.
+- `docs/architecture.md`: decisões técnicas e de organização.
+- `docs/content-sources.md`: fontes públicas usadas para validar conteúdo profissional.
+- `docs/design-references.md`: referências de composição e direção visual.
 
-## Escopo atual
+## Escopo
 
-A aplicação é estática e não possui backend, formulário, autenticação, API, banco de dados ou configuração de publicação. A página inicial é carregada sob demanda e oferece navegação por âncoras entre seções provisórias.
+A aplicação é estática e não possui backend, formulário, autenticação, API própria ou banco de dados. Os canais de contato direcionam para perfis profissionais externos.
