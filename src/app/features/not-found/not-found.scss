@@ -1,7 +1,22 @@
-@use '../../../styles/tokens' as tokens;
-
 section {
-  width: min(100% - #{tokens.$space-8}, tokens.$content-max-width);
+  width: min(100% - 2rem, var(--content-narrow));
   margin-inline: auto;
-  padding-block: tokens.$space-16;
+  padding-block: clamp(5rem, 14vw, 10rem);
+}
+
+h1 {
+  margin-bottom: 1rem;
+  color: var(--color-cyan);
+  font-size: clamp(2.5rem, 8vw, 5rem);
+}
+
+p {
+  color: var(--color-text-muted);
+}
+
+a {
+  display: inline-flex;
+  margin-top: 1rem;
+  color: var(--color-lime);
+  font-weight: 700;
 }
