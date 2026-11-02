@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="BritoDev">
+  <defs>
+    <linearGradient id="brand-gradient" x1="8" y1="8" x2="56" y2="56" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#9d7bff" />
+      <stop offset="1" stop-color="#47d7ff" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="#121522" />
+  <rect x="3" y="3" width="58" height="58" rx="13" fill="none" stroke="url(#brand-gradient)" stroke-width="3" />
+  <path d="m25 21-10 11 10 11M39 21l10 11-10 11M36 16 28 48" fill="none" stroke="url(#brand-gradient)" stroke-linecap="round" stroke-linejoin="round" stroke-width="5" />
+</svg>
