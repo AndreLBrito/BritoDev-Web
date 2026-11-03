@@ -49,61 +49,80 @@
         </div>
       </article>
 
-      <article class="project-card project-card--pricewise-api">
-        <div class="project-visual" aria-hidden="true">
-          <div class="api-node"><svg lucideDatabase></svg></div>
-          <span></span><span></span><span></span>
-          <div class="chart-bars"><i></i><i></i><i></i><i></i><i></i></div>
+      <article class="project-card project-card--pricewise">
+        <div class="project-visual pricewise-visual" aria-hidden="true">
+          <div class="pricewise-layer pricewise-layer--web">
+            <div>
+              <svg lucideBraces></svg>
+              <span>PriceWise Web</span>
+            </div>
+            <strong>Interface e experiência de uso</strong>
+            <small>Produtos · lojas · histórico · alertas</small>
+          </div>
+
+          <div class="pricewise-connection">
+            <span>HTTPS · JSON</span>
+          </div>
+
+          <div class="pricewise-layer pricewise-layer--api">
+            <div>
+              <svg lucideGauge></svg>
+              <span>PriceWise API</span>
+            </div>
+            <strong>Regras, segurança e processamento</strong>
+            <small>Autenticação · preços · notificações</small>
+          </div>
+
+          <div class="pricewise-resources">
+            <span><svg lucideDatabase></svg> PostgreSQL</span>
+            <span>Redis</span>
+            <span>Quartz.NET</span>
+          </div>
         </div>
         <div class="project-content">
           <div class="project-topline">
-            <span>Back-end · Monitoramento de preços</span>
+            <span>Full stack · Monitoramento de preços</span>
             <svg lucideGauge aria-hidden="true"></svg>
           </div>
-          <h3>PriceWise API</h3>
+          <h3>PriceWise</h3>
           <p>
-            API REST para produtos, histórico de preços, alertas e notificações, com cache
-            distribuído, processamento assíncrono, auditoria e observabilidade.
+            Solução dividida em dois repositórios com responsabilidades distintas: a aplicação web
+            apresenta e valida as interações do usuário, enquanto a API concentra dados, regras de
+            negócio, autenticação e tarefas em segundo plano.
           </p>
-          <ul aria-label="Tecnologias da PriceWise API">
-            <li>Minimal API</li>
-            <li>Dapper</li>
-            <li>Redis</li>
-            <li>Quartz.NET</li>
-          </ul>
-          <a href="https://github.com/AndreLBrito/PriceWise-API" target="_blank" rel="noreferrer">
-            Explorar repositório <svg lucideArrowUpRight aria-hidden="true"></svg>
-          </a>
-        </div>
-      </article>
 
-      <article class="project-card project-card--pricewise-web">
-        <div class="project-visual dashboard-visual" aria-hidden="true">
-          <div class="dashboard-sidebar"></div>
-          <div class="dashboard-main">
-            <i></i><i></i><i></i>
-            <b></b>
+          <div class="pricewise-parts">
+            <section>
+              <span>Front-end</span>
+              <h4>PriceWise Web</h4>
+              <p>
+                Interface React para consulta, administração, histórico e configuração de alertas.
+              </p>
+            </section>
+            <section>
+              <span>Back-end</span>
+              <h4>PriceWise API</h4>
+              <p>
+                API .NET responsável por persistência, cache, segurança e processamento agendado.
+              </p>
+            </section>
           </div>
-        </div>
-        <div class="project-content">
-          <div class="project-topline">
-            <span>Front-end · Dashboard responsivo</span>
-            <svg lucideBraces aria-hidden="true"></svg>
-          </div>
-          <h3>PriceWise Web</h3>
-          <p>
-            Interface React para produtos, lojas, histórico, alertas e administração, integrada à
-            API PriceWise com autenticação e validação.
-          </p>
-          <ul aria-label="Tecnologias da PriceWise Web">
+
+          <ul aria-label="Tecnologias da solução PriceWise">
+            <li>.NET 10</li>
             <li>React</li>
-            <li>TypeScript</li>
-            <li>TanStack Query</li>
-            <li>Zod</li>
+            <li>PostgreSQL</li>
+            <li>Redis</li>
           </ul>
-          <a href="https://github.com/AndreLBrito/PriceWise-Web" target="_blank" rel="noreferrer">
-            Explorar repositório <svg lucideArrowUpRight aria-hidden="true"></svg>
-          </a>
+
+          <div class="project-links" aria-label="Repositórios da solução PriceWise">
+            <a href="https://github.com/AndreLBrito/PriceWise-Web" target="_blank" rel="noreferrer">
+              Repositório Web <svg lucideArrowUpRight aria-hidden="true"></svg>
+            </a>
+            <a href="https://github.com/AndreLBrito/PriceWise-API" target="_blank" rel="noreferrer">
+              Repositório API <svg lucideArrowUpRight aria-hidden="true"></svg>
+            </a>
+          </div>
         </div>
       </article>
     </div>
