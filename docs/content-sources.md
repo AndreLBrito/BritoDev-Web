@@ -11,8 +11,7 @@ O conteúdo profissional do site evita afirmações sem suporte. As informaçõe
 ## Projetos
 
 - [TaskFlow](https://github.com/AndreLBrito/TaskFlow): plataforma Kanban com ASP.NET Core, Angular e PostgreSQL.
-- [PriceWise API](https://github.com/AndreLBrito/PriceWise-API): API de monitoramento de preços com .NET, Dapper, PostgreSQL, Redis, Quartz.NET e OpenTelemetry.
-- [PriceWise Web](https://github.com/AndreLBrito/PriceWise-Web): interface TypeScript/React para a solução PriceWise.
+- **PriceWise:** solução de monitoramento de preços dividida entre a [API em .NET](https://github.com/AndreLBrito/PriceWise-API), responsável por dados, regras e processamento, e a [interface em React](https://github.com/AndreLBrito/PriceWise-Web), responsável pela experiência de uso.
 - [Lazarus Exemplos](https://github.com/AndreLBrito/Lazarus-Exemplos): experimentos e exemplos desenvolvidos com Lazarus/Pascal.
 
 Informações de clientes, depoimentos, resultados financeiros, números de projeto e contatos privados não foram adicionados.
