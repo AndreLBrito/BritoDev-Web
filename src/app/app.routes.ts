@@ -4,7 +4,7 @@ export const routes: Routes = [
   {
     path: '',
     loadComponent: () => import('./features/home/home').then(({ Home }) => Home),
-    title: 'BritoDev | Sites, sistemas e integrações',
+    title: 'BritoDev | Desenvolvimento de software e integrações',
   },
   {
     path: '**',
