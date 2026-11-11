@@ -61,4 +61,4 @@ npm run format
 
 ## Escopo
 
-A aplicação é estática e não possui backend, formulário, autenticação, API própria ou banco de dados. Os canais de contato direcionam para perfis profissionais externos.
+A aplicação é estática e não possui backend, formulário, autenticação, API própria ou banco de dados. O contato principal é realizado por e-mail, com LinkedIn como canal alternativo.
