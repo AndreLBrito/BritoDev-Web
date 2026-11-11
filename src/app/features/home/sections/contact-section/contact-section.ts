@@ -2,13 +2,13 @@ import { Component } from '@angular/core';
 import {
   LucideArrowUpRight,
   LucideCheck,
-  LucideCode2,
+  LucideMail,
   LucideMapPin,
   LucideMessageCircle,
 } from '@lucide/angular';
 
 @Component({
-  imports: [LucideArrowUpRight, LucideCheck, LucideCode2, LucideMapPin, LucideMessageCircle],
+  imports: [LucideArrowUpRight, LucideCheck, LucideMail, LucideMapPin, LucideMessageCircle],
   selector: 'app-contact-section',
   styleUrl: './contact-section.scss',
   templateUrl: './contact-section.html',
