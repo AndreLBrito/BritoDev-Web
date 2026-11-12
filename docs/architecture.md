@@ -15,6 +15,7 @@ Apresentar a BritoDev e o trabalho de André Brito em uma experiência estática
 - **Ícones vetoriais seletivos:** `@lucide/angular` fornece componentes standalone e permite incluir apenas os ícones efetivamente usados.
 - **Aplicação estática:** não há backend, estado global, biblioteca de interface, autenticação ou persistência nesta etapa.
 - **Acessibilidade:** a estrutura usa elementos semânticos, rótulos de navegação, link para pular ao conteúdo, foco visível, menu mobile com estado exposto e redução de movimento conforme preferência do sistema.
+- **SEO técnico estático:** `index.html` concentra canonical, metadados sociais e dados estruturados; `robots.txt` e `sitemap.xml` são publicados como assets. A Home restaura a diretiva de indexação e a página de rota inexistente aplica `noindex`.
 
 ## Fluxo de composição
 

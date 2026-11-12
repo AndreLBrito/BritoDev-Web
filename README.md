@@ -55,6 +55,7 @@ npm run format
 - `src/app/features/not-found`: experiência para rotas inexistentes.
 - `src/styles`: tokens visuais e estilos globais essenciais.
 - `public/images` e `public/icons`: fotografia e identidade visual estática.
+- `public/robots.txt` e `public/sitemap.xml`: descoberta e rastreamento pelos buscadores.
 - `docs/architecture.md`: decisões técnicas e de organização.
 - `docs/content-sources.md`: fontes públicas usadas para validar conteúdo profissional.
 - `docs/design-references.md`: referências de composição e direção visual.
@@ -62,3 +63,7 @@ npm run format
 ## Escopo
 
 A aplicação é estática e não possui backend, formulário, autenticação, API própria ou banco de dados. O contato principal é realizado por e-mail, com LinkedIn como canal alternativo.
+
+## SEO técnico
+
+O domínio canônico é `https://britodev.com.br/`. A página inicial fornece descrição, metadados Open Graph e Twitter, dados estruturados em JSON-LD, regras de rastreamento e sitemap. Rotas inexistentes recebem `noindex` após a inicialização do Angular para não serem consideradas páginas válidas pelos buscadores.
