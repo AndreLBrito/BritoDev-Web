@@ -1,5 +1,6 @@
 .hero {
   position: relative;
+  overflow: clip;
   padding-block: clamp(4rem, 8vw, 7rem) 2rem;
 }
 
@@ -260,7 +261,7 @@ h1 span {
 
 @media (max-width: 38rem) {
   .visual-orbit {
-    inset-inline: 0;
+    inset-inline: 1.5rem;
   }
 
   .stack-card {

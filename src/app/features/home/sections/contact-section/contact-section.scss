@@ -33,6 +33,7 @@
 .contact-copy {
   position: relative;
   z-index: 1;
+  min-width: 0;
 }
 
 .contact-copy h2 {
@@ -115,6 +116,7 @@
 .contact-brief {
   position: relative;
   z-index: 1;
+  min-width: 0;
   padding: 1.75rem;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-large);
