@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {
   LucideArrowUpRight,
   LucideBraces,
@@ -7,6 +7,7 @@ import {
   LucideGitBranch,
   LucideLayers3,
 } from '@lucide/angular';
+import { LanguageService } from '../../../../shared/i18n/language.service';
 
 @Component({
   imports: [
@@ -21,4 +22,6 @@ import {
   styleUrl: './projects-section.scss',
   templateUrl: './projects-section.html',
 })
-export class ProjectsSection {}
+export class ProjectsSection {
+  protected readonly i18n = inject(LanguageService);
+}

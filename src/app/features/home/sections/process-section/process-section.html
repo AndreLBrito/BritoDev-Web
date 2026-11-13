@@ -2,13 +2,10 @@
   <div class="container">
     <div class="process-intro">
       <div class="section-heading">
-        <p class="eyebrow">Como trabalho</p>
-        <h2 id="process-title">Um processo objetivo, com decisões verificáveis.</h2>
+        <p class="eyebrow">{{ i18n.t('process.eyebrow') }}</p>
+        <h2 id="process-title">{{ i18n.t('process.title') }}</h2>
       </div>
-      <p class="process-lead">
-        O trabalho começa pela compreensão do problema, das restrições e dos critérios de aceite.
-        Tecnologia e arquitetura são definidas a partir desse contexto.
-      </p>
+      <p class="process-lead">{{ i18n.t('process.lead') }}</p>
     </div>
 
     <ol class="process-list">
@@ -16,44 +13,39 @@
         <span class="step-number">01</span>
         <div class="step-icon"><svg lucideSearch aria-hidden="true"></svg></div>
         <div>
-          <h3>Diagnosticar</h3>
-          <p>Contexto, objetivo, sistemas existentes, restrições e critérios de aceite.</p>
+          <h3>{{ i18n.t('process.diagnoseTitle') }}</h3>
+          <p>{{ i18n.t('process.diagnoseText') }}</p>
         </div>
       </li>
       <li>
         <span class="step-number">02</span>
         <div class="step-icon"><svg lucideListChecks aria-hidden="true"></svg></div>
         <div>
-          <h3>Planejar</h3>
-          <p>Escopo, prioridades, riscos, escolhas técnicas e etapas de execução documentadas.</p>
+          <h3>{{ i18n.t('process.planTitle') }}</h3>
+          <p>{{ i18n.t('process.planText') }}</p>
         </div>
       </li>
       <li>
         <span class="step-number">03</span>
         <div class="step-icon"><svg lucideCode2 aria-hidden="true"></svg></div>
         <div>
-          <h3>Implementar</h3>
-          <p>
-            Desenvolvimento incremental, código revisável, testes aplicáveis e validação contínua.
-          </p>
+          <h3>{{ i18n.t('process.implementTitle') }}</h3>
+          <p>{{ i18n.t('process.implementText') }}</p>
         </div>
       </li>
       <li>
         <span class="step-number">04</span>
         <div class="step-icon"><svg lucideRefreshCcw aria-hidden="true"></svg></div>
         <div>
-          <h3>Evoluir</h3>
-          <p>Entrega documentada, acompanhamento técnico e manutenção orientada por prioridade.</p>
+          <h3>{{ i18n.t('process.evolveTitle') }}</h3>
+          <p>{{ i18n.t('process.evolveText') }}</p>
         </div>
       </li>
     </ol>
 
     <div class="process-note">
       <span aria-hidden="true">//</span>
-      <p>
-        Escopo, decisões e andamento são comunicados de forma direta, com registro do que influencia
-        prazo, custo e manutenção.
-      </p>
+      <p>{{ i18n.t('process.note') }}</p>
     </div>
   </div>
 </section>

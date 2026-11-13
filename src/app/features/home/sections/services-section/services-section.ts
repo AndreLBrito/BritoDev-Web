@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {
   LucideBraces,
   LucideBuilding2,
@@ -9,6 +9,7 @@ import {
   LucideWorkflow,
   LucideWrench,
 } from '@lucide/angular';
+import { LanguageService } from '../../../../shared/i18n/language.service';
 
 @Component({
   imports: [
@@ -25,4 +26,6 @@ import {
   styleUrl: './services-section.scss',
   templateUrl: './services-section.html',
 })
-export class ServicesSection {}
+export class ServicesSection {
+  protected readonly i18n = inject(LanguageService);
+}

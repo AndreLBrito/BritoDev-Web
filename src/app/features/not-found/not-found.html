@@ -1,5 +1,5 @@
 <section aria-labelledby="not-found-title">
-  <h1 id="not-found-title">Página não encontrada</h1>
-  <p>O endereço informado não corresponde a uma página disponível.</p>
-  <a routerLink="/">Voltar para a página inicial</a>
+  <h1 id="not-found-title">{{ i18n.t('notFound.title') }}</h1>
+  <p>{{ i18n.t('notFound.text') }}</p>
+  <a routerLink="/">{{ i18n.t('notFound.action') }}</a>
 </section>

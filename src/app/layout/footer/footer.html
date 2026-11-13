@@ -4,11 +4,11 @@
       <svg lucideCode2 aria-hidden="true"></svg>
       <div>
         <strong>BritoDev</strong>
-        <p>Desenvolvimento de software com clareza técnica e responsabilidade de entrega.</p>
+        <p>{{ i18n.t('footer.tagline') }}</p>
       </div>
     </div>
 
-    <nav aria-label="Contato e redes profissionais">
+    <nav [attr.aria-label]="i18n.t('footer.navLabel')">
       <a href="mailto:contato@britodev.com.br"> contato@britodev.com.br </a>
       <a href="https://github.com/AndreLBrito" target="_blank" rel="noreferrer">
         GitHub
@@ -21,7 +21,7 @@
     </nav>
   </div>
   <div class="footer-bottom container">
-    <p>© {{ currentYear }} BritoDev. Desenvolvido por André Brito.</p>
-    <a href="#main-content">Voltar ao topo <span aria-hidden="true">↑</span></a>
+    <p>© {{ currentYear }} BritoDev. {{ i18n.t('footer.credit') }}</p>
+    <a href="#main-content">{{ i18n.t('footer.backToTop') }} <span aria-hidden="true">↑</span></a>
   </div>
 </footer>
