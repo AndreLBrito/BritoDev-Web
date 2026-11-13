@@ -1,5 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { Meta } from '@angular/platform-browser';
+import { LanguageService } from '../../shared/i18n/language.service';
 import { AboutSection } from './sections/about-section/about-section';
 import { ContactSection } from './sections/contact-section/contact-section';
 import { HeroSection } from './sections/hero-section/hero-section';
@@ -21,8 +22,10 @@ import { ServicesSection } from './sections/services-section/services-section';
 })
 export class Home implements OnInit {
   private readonly meta = inject(Meta);
+  private readonly i18n = inject(LanguageService);
 
   ngOnInit(): void {
+    this.i18n.setPage('home');
     this.meta.updateTag({
       content: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
       name: 'robots',

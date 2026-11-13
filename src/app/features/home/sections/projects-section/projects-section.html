@@ -2,12 +2,9 @@
   <div class="container">
     <div class="projects-heading">
       <div class="section-heading">
-        <p class="eyebrow">Projetos selecionados</p>
-        <h2 id="projects-title">Evidência técnica em repositórios públicos.</h2>
-        <p>
-          Implementações que demonstram decisões de arquitetura, segurança, testes, observabilidade
-          e experiência de uso.
-        </p>
+        <p class="eyebrow">{{ i18n.t('projects.eyebrow') }}</p>
+        <h2 id="projects-title">{{ i18n.t('projects.title') }}</h2>
+        <p>{{ i18n.t('projects.description') }}</p>
       </div>
       <a
         class="all-projects-link"
@@ -15,7 +12,7 @@
         target="_blank"
         rel="noreferrer"
       >
-        Todos no GitHub
+        {{ i18n.t('projects.all') }}
         <svg lucideArrowUpRight aria-hidden="true"></svg>
       </a>
     </div>
@@ -29,22 +26,20 @@
         </div>
         <div class="project-content">
           <div class="project-topline">
-            <span>Full stack · Kanban colaborativo</span>
+            <span>{{ i18n.t('projects.taskflowTag') }}</span>
             <svg lucideLayers3 aria-hidden="true"></svg>
           </div>
           <h3>TaskFlow</h3>
-          <p>
-            Aplicação Kanban para workspaces, quadros, tarefas, comentários, membros e permissões,
-            com auditoria, métricas e testes automatizados.
-          </p>
-          <ul aria-label="Tecnologias do TaskFlow">
+          <p>{{ i18n.t('projects.taskflowText') }}</p>
+          <ul [attr.aria-label]="i18n.t('projects.taskflowTech')">
             <li>.NET 10</li>
             <li>Angular 22</li>
             <li>PostgreSQL</li>
             <li>OpenTelemetry</li>
           </ul>
           <a href="https://github.com/AndreLBrito/TaskFlow" target="_blank" rel="noreferrer">
-            Explorar repositório <svg lucideArrowUpRight aria-hidden="true"></svg>
+            {{ i18n.t('projects.exploreRepository') }}
+            <svg lucideArrowUpRight aria-hidden="true"></svg>
           </a>
         </div>
       </article>
@@ -56,8 +51,8 @@
               <svg lucideBraces></svg>
               <span>PriceWise Web</span>
             </div>
-            <strong>Interface e experiência de uso</strong>
-            <small>Produtos · lojas · histórico · alertas</small>
+            <strong>{{ i18n.t('projects.webExperience') }}</strong>
+            <small>{{ i18n.t('projects.webFeatures') }}</small>
           </div>
 
           <div class="pricewise-connection">
@@ -69,8 +64,8 @@
               <svg lucideGauge></svg>
               <span>PriceWise API</span>
             </div>
-            <strong>Regras, segurança e processamento</strong>
-            <small>Autenticação · preços · notificações</small>
+            <strong>{{ i18n.t('projects.apiProcessing') }}</strong>
+            <small>{{ i18n.t('projects.apiFeatures') }}</small>
           </div>
 
           <div class="pricewise-resources">
@@ -81,64 +76,56 @@
         </div>
         <div class="project-content">
           <div class="project-topline">
-            <span>Full stack · Monitoramento de preços</span>
+            <span>{{ i18n.t('projects.pricewiseTag') }}</span>
             <svg lucideGauge aria-hidden="true"></svg>
           </div>
           <h3>PriceWise</h3>
-          <p>
-            Solução dividida em dois repositórios com responsabilidades distintas: a aplicação web
-            apresenta e valida as interações do usuário, enquanto a API concentra dados, regras de
-            negócio, autenticação e tarefas em segundo plano.
-          </p>
+          <p>{{ i18n.t('projects.pricewiseText') }}</p>
 
           <div class="pricewise-parts">
             <section>
-              <span>Front-end</span>
+              <span>{{ i18n.t('projects.frontend') }}</span>
               <h4>PriceWise Web</h4>
-              <p>
-                Interface React para consulta, administração, histórico e configuração de alertas.
-              </p>
+              <p>{{ i18n.t('projects.frontendText') }}</p>
             </section>
             <section>
-              <span>Back-end</span>
+              <span>{{ i18n.t('projects.backend') }}</span>
               <h4>PriceWise API</h4>
-              <p>
-                API .NET responsável por persistência, cache, segurança e processamento agendado.
-              </p>
+              <p>{{ i18n.t('projects.backendText') }}</p>
             </section>
           </div>
 
-          <ul aria-label="Tecnologias da solução PriceWise">
+          <ul [attr.aria-label]="i18n.t('projects.pricewiseTech')">
             <li>.NET 10</li>
             <li>React</li>
             <li>PostgreSQL</li>
             <li>Redis</li>
           </ul>
 
-          <div class="project-links" aria-label="Repositórios da solução PriceWise">
+          <div class="project-links" [attr.aria-label]="i18n.t('projects.pricewiseRepos')">
             <a href="https://github.com/AndreLBrito/PriceWise-Web" target="_blank" rel="noreferrer">
-              Repositório Web <svg lucideArrowUpRight aria-hidden="true"></svg>
+              {{ i18n.t('projects.webRepository') }}
+              <svg lucideArrowUpRight aria-hidden="true"></svg>
             </a>
             <a href="https://github.com/AndreLBrito/PriceWise-API" target="_blank" rel="noreferrer">
-              Repositório API <svg lucideArrowUpRight aria-hidden="true"></svg>
+              {{ i18n.t('projects.apiRepository') }}
+              <svg lucideArrowUpRight aria-hidden="true"></svg>
             </a>
           </div>
         </div>
       </article>
     </div>
 
-    <aside class="code-lab" aria-label="Outros experimentos públicos">
+    <aside class="code-lab" [attr.aria-label]="i18n.t('projects.otherLabel')">
       <svg lucideGitBranch aria-hidden="true"></svg>
       <div>
-        <span>Repositórios complementares</span>
-        <h3>Exemplos em Lazarus e outros experimentos</h3>
-        <p>
-          Exemplos e experimentos usados para registrar soluções, validar abordagens e manter
-          referências técnicas.
-        </p>
+        <span>{{ i18n.t('projects.otherTag') }}</span>
+        <h3>{{ i18n.t('projects.otherTitle') }}</h3>
+        <p>{{ i18n.t('projects.otherText') }}</p>
       </div>
       <a href="https://github.com/AndreLBrito/Lazarus-Exemplos" target="_blank" rel="noreferrer">
-        Ver exemplos <svg lucideArrowUpRight aria-hidden="true"></svg>
+        {{ i18n.t('projects.viewExamples') }}
+        <svg lucideArrowUpRight aria-hidden="true"></svg>
       </a>
     </aside>
   </div>

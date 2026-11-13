@@ -1,82 +1,82 @@
 <section id="services" class="section services" aria-labelledby="services-title">
   <div class="container">
     <div class="section-heading">
-      <p class="eyebrow">Escopo de atuação</p>
-      <h2 id="services-title">Soluções digitais com responsabilidade técnica.</h2>
-      <p>
-        Desenvolvimento orientado por requisitos, escopo definido e decisões compatíveis com a
-        realidade técnica e operacional de cada projeto.
-      </p>
+      <p class="eyebrow">{{ i18n.t('services.eyebrow') }}</p>
+      <h2 id="services-title">{{ i18n.t('services.title') }}</h2>
+      <p>{{ i18n.t('services.description') }}</p>
     </div>
 
     <div class="services-grid">
       <article class="service-card service-card--purple">
         <div class="service-icon"><svg lucideGlobe2 aria-hidden="true"></svg></div>
         <span class="service-number">01</span>
-        <h3>Sites institucionais e aplicações web</h3>
-        <p>
-          Interfaces responsivas para apresentação institucional, captação de oportunidades e apoio
-          a processos internos.
-        </p>
+        <h3>{{ i18n.t('services.webTitle') }}</h3>
+        <p>{{ i18n.t('services.webDescription') }}</p>
         <ul>
           <li>
-            <svg lucideMonitorSmartphone aria-hidden="true"></svg> Navegação responsiva e acessível
+            <svg lucideMonitorSmartphone aria-hidden="true"></svg>
+            {{ i18n.t('services.webItem1') }}
           </li>
-          <li><svg lucideCode2 aria-hidden="true"></svg> Estrutura preparada para manutenção</li>
+          <li><svg lucideCode2 aria-hidden="true"></svg> {{ i18n.t('services.webItem2') }}</li>
         </ul>
       </article>
 
       <article class="service-card service-card--cyan">
         <div class="service-icon"><svg lucideServer aria-hidden="true"></svg></div>
         <span class="service-number">02</span>
-        <h3>APIs e sistemas de negócio</h3>
-        <p>APIs REST, módulos de ERP e aplicações em C#/.NET para processos comerciais e dados.</p>
+        <h3>{{ i18n.t('services.apiTitle') }}</h3>
+        <p>{{ i18n.t('services.apiDescription') }}</p>
         <ul>
-          <li><svg lucideBraces aria-hidden="true"></svg> Regras de negócio e integrações</li>
-          <li><svg lucideBuilding2 aria-hidden="true"></svg> Bancos relacionais e autenticação</li>
+          <li><svg lucideBraces aria-hidden="true"></svg> {{ i18n.t('services.apiItem1') }}</li>
+          <li><svg lucideBuilding2 aria-hidden="true"></svg> {{ i18n.t('services.apiItem2') }}</li>
         </ul>
       </article>
 
       <article class="service-card service-card--lime">
         <div class="service-icon"><svg lucideWorkflow aria-hidden="true"></svg></div>
         <span class="service-number">03</span>
-        <h3>Automação e integração de processos</h3>
-        <p>
-          Rotinas e serviços para centralizar operações, conectar sistemas e reduzir trabalho
-          manual.
-        </p>
+        <h3>{{ i18n.t('services.automationTitle') }}</h3>
+        <p>{{ i18n.t('services.automationDescription') }}</p>
         <ul>
-          <li><svg lucideWorkflow aria-hidden="true"></svg> Processos conectados</li>
-          <li><svg lucideWrench aria-hidden="true"></svg> Execução controlada e rastreável</li>
+          <li>
+            <svg lucideWorkflow aria-hidden="true"></svg>
+            {{ i18n.t('services.automationItem1') }}
+          </li>
+          <li>
+            <svg lucideWrench aria-hidden="true"></svg>
+            {{ i18n.t('services.automationItem2') }}
+          </li>
         </ul>
       </article>
 
       <article class="service-card service-card--coral">
         <div class="service-icon"><svg lucideWrench aria-hidden="true"></svg></div>
         <span class="service-number">04</span>
-        <h3>Manutenção e evolução de sistemas</h3>
-        <p>
-          Sustentação, correção e modernização em .NET, Delphi e Lazarus para equipes parceiras.
-        </p>
+        <h3>{{ i18n.t('services.maintenanceTitle') }}</h3>
+        <p>{{ i18n.t('services.maintenanceDescription') }}</p>
         <ul>
           <li>
-            <svg lucideCode2 aria-hidden="true"></svg> Correção e refatoração de código legado
+            <svg lucideCode2 aria-hidden="true"></svg>
+            {{ i18n.t('services.maintenanceItem1') }}
           </li>
-          <li><svg lucideBraces aria-hidden="true"></svg> Testes e evolução incremental</li>
+          <li>
+            <svg lucideBraces aria-hidden="true"></svg>
+            {{ i18n.t('services.maintenanceItem2') }}
+          </li>
         </ul>
       </article>
     </div>
 
-    <div class="audience-grid" aria-label="Públicos atendidos">
+    <div class="audience-grid" [attr.aria-label]="i18n.t('services.audiencesLabel')">
       <article>
-        <span>Para negócios</span>
-        <h3>Pequenas empresas e profissionais</h3>
-        <p>Presença digital e ferramentas adequadas ao processo e à capacidade de investimento.</p>
+        <span>{{ i18n.t('services.businessTag') }}</span>
+        <h3>{{ i18n.t('services.businessTitle') }}</h3>
+        <p>{{ i18n.t('services.businessText') }}</p>
       </article>
       <article>
-        <span>Para parceiros tech</span>
-        <h3>Software houses e agências</h3>
-        <p>Capacidade técnica adicional para integrações, sustentação e demandas especializadas.</p>
+        <span>{{ i18n.t('services.techTag') }}</span>
+        <h3>{{ i18n.t('services.techTitle') }}</h3>
+        <p>{{ i18n.t('services.techText') }}</p>
       </article>
     </div>
   </div>

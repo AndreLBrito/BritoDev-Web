@@ -1,60 +1,49 @@
 <section id="about" class="section about" aria-labelledby="about-title">
   <div class="about-grid container">
     <div class="about-copy">
-      <p class="eyebrow">Experiência profissional</p>
-      <h2 id="about-title">Atuação em sistemas de negócio e back-end .NET.</h2>
-      <p class="about-lead">
-        Sou André Lucas de Brito, desenvolvedor back-end em Cariacica, Espírito Santo. Atuo
-        profissionalmente desde 2017, com experiência em sistemas ERP, APIs REST, regras de negócio,
-        integrações e bancos de dados relacionais.
-      </p>
-      <p>
-        Trabalhei com Pascal e Lazarus entre 2017 e 2020 e com C#/.NET entre 2020 e 2025 na
-        Tecnobyte. Desde 2026, também desenvolvo projetos independentes sob demanda. A BritoDev
-        reúne essa experiência para atender negócios e equipes de tecnologia com comunicação direta
-        e critérios técnicos claros.
-      </p>
+      <p class="eyebrow">{{ i18n.t('about.eyebrow') }}</p>
+      <h2 id="about-title">{{ i18n.t('about.title') }}</h2>
+      <p class="about-lead">{{ i18n.t('about.lead') }}</p>
+      <p>{{ i18n.t('about.text') }}</p>
 
       <div class="principles-grid">
         <article>
           <svg lucideHeartHandshake aria-hidden="true"></svg>
-          <h3>Comunicação objetiva</h3>
-          <p>Contexto, riscos, decisões e andamento apresentados sem ambiguidade.</p>
+          <h3>{{ i18n.t('about.communicationTitle') }}</h3>
+          <p>{{ i18n.t('about.communicationText') }}</p>
         </article>
         <article>
           <svg lucideShieldCheck aria-hidden="true"></svg>
-          <h3>Qualidade verificável</h3>
-          <p>
-            Legibilidade, testes, observabilidade e revisão aplicados conforme o risco do projeto.
-          </p>
+          <h3>{{ i18n.t('about.qualityTitle') }}</h3>
+          <p>{{ i18n.t('about.qualityText') }}</p>
         </article>
         <article>
           <svg lucideGauge aria-hidden="true"></svg>
-          <h3>Manutenção sustentável</h3>
-          <p>Soluções proporcionais ao problema e preparadas para correção e evolução.</p>
+          <h3>{{ i18n.t('about.maintenanceTitle') }}</h3>
+          <p>{{ i18n.t('about.maintenanceText') }}</p>
         </article>
       </div>
     </div>
 
-    <aside class="developer-card" aria-label="Resumo técnico de André Brito">
+    <aside class="developer-card" [attr.aria-label]="i18n.t('about.cardLabel')">
       <div class="terminal-bar">
         <span></span><span></span><span></span>
-        <p><svg lucideTerminal aria-hidden="true"></svg> perfil.ts</p>
+        <p><svg lucideTerminal aria-hidden="true"></svg> profile.ts</p>
       </div>
       <pre
-        aria-label="Resumo profissional em formato de código"
+        [attr.aria-label]="i18n.t('about.codeLabel')"
       ><code><span class="code-purple">const</span> andre = {{ '{' }}
-  desde: <span class="code-lime">2017</span>,
-  especialidade: <span class="code-cyan">'C#/.NET'</span>,
+  since: <span class="code-lime">2017</span>,
+  specialty: <span class="code-cyan">'C#/.NET'</span>,
   base: <span class="code-lime">'Cariacica, ES'</span>,
-  abordagem: [
-    <span class="code-cyan">'clareza'</span>,
-    <span class="code-cyan">'testes'</span>,
-    <span class="code-cyan">'observabilidade'</span>
+  approach: [
+    <span class="code-cyan">'{{ i18n.t('about.codeClarity') }}'</span>,
+    <span class="code-cyan">'{{ i18n.t('about.codeTests') }}'</span>,
+    <span class="code-cyan">'{{ i18n.t('about.codeObservability') }}'</span>
   ]
 {{ '}' }};</code></pre>
 
-      <div class="stack-list" aria-label="Tecnologias principais">
+      <div class="stack-list" [attr.aria-label]="i18n.t('about.stackLabel')">
         <span>C#</span>
         <span>.NET</span>
         <span>ASP.NET Core</span>

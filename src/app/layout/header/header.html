@@ -1,36 +1,62 @@
 <header class="site-header">
-  <a class="skip-link" href="#main-content">Ir para o conteúdo</a>
+  <a class="skip-link" href="#main-content">{{ i18n.t('nav.skip') }}</a>
   <div class="header-content container">
     <a class="brand" href="/" (click)="closeMenu()">
       <span class="brand-mark" aria-hidden="true">B</span>
       <span>Brito<span>Dev</span></span>
     </a>
 
-    <button
-      class="menu-toggle"
-      type="button"
-      aria-controls="main-navigation"
-      [attr.aria-expanded]="isMenuOpen()"
-      [attr.aria-label]="isMenuOpen() ? 'Fechar menu' : 'Abrir menu'"
-      (click)="toggleMenu()"
-    >
-      @if (isMenuOpen()) {
-        <svg lucideX aria-hidden="true"></svg>
-      } @else {
-        <svg lucideMenu aria-hidden="true"></svg>
-      }
-    </button>
-
-    <nav id="main-navigation" aria-label="Navegação principal" [class.is-open]="isMenuOpen()">
+    <nav id="main-navigation" [attr.aria-label]="i18n.t('nav.main')" [class.is-open]="isMenuOpen()">
       <ul>
-        <li><a href="/#services" (click)="closeMenu()">Serviços</a></li>
-        <li><a href="/#solutions" (click)="closeMenu()">Como trabalho</a></li>
-        <li><a href="/#projects" (click)="closeMenu()">Projetos</a></li>
-        <li><a href="/#about" (click)="closeMenu()">Sobre</a></li>
         <li>
-          <a class="nav-cta" href="/#contact" (click)="closeMenu()"> Contato profissional </a>
+          <a href="/#services" (click)="closeMenu()">{{ i18n.t('nav.services') }}</a>
+        </li>
+        <li>
+          <a href="/#solutions" (click)="closeMenu()">{{ i18n.t('nav.process') }}</a>
+        </li>
+        <li>
+          <a href="/#projects" (click)="closeMenu()">{{ i18n.t('nav.projects') }}</a>
+        </li>
+        <li>
+          <a href="/#about" (click)="closeMenu()">{{ i18n.t('nav.about') }}</a>
+        </li>
+        <li>
+          <a class="nav-cta" href="/#contact" (click)="closeMenu()">
+            {{ i18n.t('nav.contact') }}
+          </a>
         </li>
       </ul>
     </nav>
+
+    <div class="header-actions">
+      <label class="language-selector">
+        <svg lucideGlobe2 aria-hidden="true"></svg>
+        <span class="sr-only">{{ i18n.t('language.label') }}</span>
+        <select
+          [attr.aria-label]="i18n.t('language.label')"
+          [value]="i18n.language()"
+          (change)="changeLanguage($event)"
+        >
+          <option value="pt-BR">{{ i18n.t('language.portuguese') }}</option>
+          <option value="es">{{ i18n.t('language.spanish') }}</option>
+          <option value="en">{{ i18n.t('language.english') }}</option>
+        </select>
+      </label>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-controls="main-navigation"
+        [attr.aria-expanded]="isMenuOpen()"
+        [attr.aria-label]="i18n.t(isMenuOpen() ? 'nav.close' : 'nav.open')"
+        (click)="toggleMenu()"
+      >
+        @if (isMenuOpen()) {
+          <svg lucideX aria-hidden="true"></svg>
+        } @else {
+          <svg lucideMenu aria-hidden="true"></svg>
+        }
+      </button>
+    </div>
   </div>
 </header>

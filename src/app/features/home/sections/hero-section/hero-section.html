@@ -3,39 +3,42 @@
     <div class="hero-copy">
       <p class="availability">
         <span aria-hidden="true"></span>
-        Atendimento a projetos sob demanda
+        {{ i18n.t('hero.availability') }}
       </p>
 
-      <p class="eyebrow">Desenvolvimento sob demanda em C#/.NET e web</p>
-      <h1 id="presentation-title">Software com <span>rigor técnico.</span></h1>
+      <p class="eyebrow">{{ i18n.t('hero.eyebrow') }}</p>
+      <h1 id="presentation-title">
+        {{ i18n.t('hero.title') }} <span>{{ i18n.t('hero.titleAccent') }}</span>
+      </h1>
       <p class="hero-description">
-        Sou André Brito, desenvolvedor back-end com experiência profissional desde 2017. Na
-        <strong>BritoDev</strong>, desenvolvo sites, sistemas, APIs e integrações alinhados às
-        necessidades de cada operação.
+        {{ i18n.t('hero.descriptionBefore') }}
+        <strong>BritoDev</strong>, {{ i18n.t('hero.descriptionAfter') }}
       </p>
 
       <div class="hero-actions">
         <a class="button button-primary" href="#contact">
-          Solicitar uma avaliação
+          {{ i18n.t('hero.primaryAction') }}
           <svg lucideArrowRight aria-hidden="true"></svg>
         </a>
-        <a class="button button-secondary" href="#projects"> Examinar projetos técnicos </a>
+        <a class="button button-secondary" href="#projects">
+          {{ i18n.t('hero.secondaryAction') }}
+        </a>
       </div>
 
-      <ul class="hero-meta" aria-label="Informações profissionais">
-        <li><svg lucideMapPin aria-hidden="true"></svg> Espírito Santo · trabalho remoto</li>
+      <ul class="hero-meta" [attr.aria-label]="i18n.t('hero.professionalInfo')">
+        <li><svg lucideMapPin aria-hidden="true"></svg> {{ i18n.t('hero.location') }}</li>
         <li>
-          <svg lucideBriefcaseBusiness aria-hidden="true"></svg> Empresas e times de tecnologia
+          <svg lucideBriefcaseBusiness aria-hidden="true"></svg> {{ i18n.t('hero.audience') }}
         </li>
       </ul>
     </div>
 
-    <div class="hero-visual" aria-label="Foto de André Brito e tecnologias principais">
+    <div class="hero-visual" [attr.aria-label]="i18n.t('hero.visualLabel')">
       <div class="visual-orbit" aria-hidden="true"></div>
       <div class="portrait-frame">
         <img
           src="images/andre-brito.jpg"
-          alt="André Brito, desenvolvedor de software e fundador da BritoDev"
+          [alt]="i18n.t('hero.photoAlt')"
           width="460"
           height="460"
           decoding="async"
@@ -44,9 +47,9 @@
       </div>
 
       <div class="floating-card code-card" aria-hidden="true">
-        <span>perfil@britodev</span>
-        <strong>&gt; analisar_requisitos()</strong>
-        <small>status: disponível para avaliação_</small>
+        <span>profile@britodev</span>
+        <strong>&gt; analyze_requirements()</strong>
+        <small>{{ i18n.t('hero.status') }}</small>
       </div>
 
       <div class="floating-card stack-card">
@@ -58,9 +61,18 @@
     </div>
   </div>
 
-  <div class="proof-strip container" aria-label="Resumo de atuação">
-    <div><strong>Desde 2017</strong><span>experiência profissional</span></div>
-    <div><strong>ERP e APIs</strong><span>sistemas e integrações de negócio</span></div>
-    <div><strong>Sob demanda</strong><span>análise, entrega e manutenção</span></div>
+  <div class="proof-strip container" [attr.aria-label]="i18n.t('hero.summaryLabel')">
+    <div>
+      <strong>{{ i18n.t('hero.proofExperienceTitle') }}</strong
+      ><span>{{ i18n.t('hero.proofExperienceText') }}</span>
+    </div>
+    <div>
+      <strong>{{ i18n.t('hero.proofSystemsTitle') }}</strong
+      ><span>{{ i18n.t('hero.proofSystemsText') }}</span>
+    </div>
+    <div>
+      <strong>{{ i18n.t('hero.proofDemandTitle') }}</strong
+      ><span>{{ i18n.t('hero.proofDemandText') }}</span>
+    </div>
   </div>
 </section>

@@ -81,6 +81,49 @@ nav .nav-cta:hover {
   color: var(--color-background);
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.language-selector {
+  display: inline-flex;
+  min-height: 2.75rem;
+  padding: 0 0.625rem;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  align-items: center;
+  gap: 0.25rem;
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+}
+
+.language-selector:focus-within {
+  border-color: var(--color-cyan);
+  color: var(--color-text);
+}
+
+.language-selector svg {
+  width: 1rem;
+}
+
+.language-selector select {
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--color-text);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+.language-selector option {
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+
 .menu-toggle {
   display: none;
   width: 2.75rem;
@@ -157,5 +200,11 @@ nav .nav-cta:hover {
     margin-top: 0.25rem;
     margin-left: 0;
     justify-content: center;
+  }
+}
+
+@media (max-width: 25rem) {
+  .brand > span:last-child {
+    display: none;
   }
 }

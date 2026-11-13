@@ -1,25 +1,19 @@
 <section id="contact" class="section contact" aria-labelledby="contact-title">
   <div class="contact-card container">
     <div class="contact-copy">
-      <p class="eyebrow">Contato profissional</p>
-      <h2 id="contact-title">Descreva a necessidade técnica ou operacional.</h2>
-      <p>
-        Compartilhe o contexto do projeto para uma avaliação inicial de escopo, riscos e próximos
-        passos.
-      </p>
+      <p class="eyebrow">{{ i18n.t('contact.eyebrow') }}</p>
+      <h2 id="contact-title">{{ i18n.t('contact.title') }}</h2>
+      <p>{{ i18n.t('contact.text') }}</p>
 
       <div class="contact-channel">
-        <span>Canal principal</span>
+        <span>{{ i18n.t('contact.channel') }}</span>
         <a href="mailto:contato@britodev.com.br">contato@britodev.com.br</a>
       </div>
 
       <div class="contact-actions">
-        <a
-          class="button button-primary"
-          href="mailto:contato@britodev.com.br?subject=Contato%20pelo%20site%20BritoDev"
-        >
+        <a class="button button-primary" [href]="i18n.emailHref()">
           <svg lucideMail aria-hidden="true"></svg>
-          Enviar e-mail
+          {{ i18n.t('contact.emailAction') }}
         </a>
         <a
           class="button contact-secondary"
@@ -28,26 +22,24 @@
           rel="noreferrer"
         >
           <svg lucideMessageCircle aria-hidden="true"></svg>
-          Contato pelo LinkedIn
+          {{ i18n.t('contact.linkedinAction') }}
           <svg lucideArrowUpRight aria-hidden="true"></svg>
         </a>
       </div>
 
       <p class="location">
-        <svg lucideMapPin aria-hidden="true"></svg> Espírito Santo · atendimento remoto
+        <svg lucideMapPin aria-hidden="true"></svg> {{ i18n.t('contact.location') }}
       </p>
     </div>
 
-    <aside class="contact-brief" aria-label="Informações úteis para iniciar uma conversa">
-      <span>Informações para avaliação</span>
-      <h3>Inclua, se possível:</h3>
+    <aside class="contact-brief" [attr.aria-label]="i18n.t('contact.briefLabel')">
+      <span>{{ i18n.t('contact.briefTag') }}</span>
+      <h3>{{ i18n.t('contact.briefTitle') }}</h3>
       <ul>
-        <li><svg lucideCheck aria-hidden="true"></svg> Problema ou objetivo principal</li>
-        <li><svg lucideCheck aria-hidden="true"></svg> Sistema ou processo existente</li>
-        <li><svg lucideCheck aria-hidden="true"></svg> Resultado esperado</li>
-        <li>
-          <svg lucideCheck aria-hidden="true"></svg> Prazo, integrações e restrições relevantes
-        </li>
+        <li><svg lucideCheck aria-hidden="true"></svg> {{ i18n.t('contact.briefItem1') }}</li>
+        <li><svg lucideCheck aria-hidden="true"></svg> {{ i18n.t('contact.briefItem2') }}</li>
+        <li><svg lucideCheck aria-hidden="true"></svg> {{ i18n.t('contact.briefItem3') }}</li>
+        <li><svg lucideCheck aria-hidden="true"></svg> {{ i18n.t('contact.briefItem4') }}</li>
       </ul>
     </aside>
   </div>
