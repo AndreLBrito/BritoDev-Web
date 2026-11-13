@@ -1,3 +1,4 @@
+import { DOCUMENT } from '@angular/common';
 import { Component, inject, signal } from '@angular/core';
 import { LucideGlobe2, LucideMenu, LucideX } from '@lucide/angular';
 import { LanguageService, SupportedLanguage } from '../../shared/i18n/language.service';
@@ -9,6 +10,7 @@ import { LanguageService, SupportedLanguage } from '../../shared/i18n/language.s
   templateUrl: './header.html',
 })
 export class Header {
+  private readonly document = inject(DOCUMENT);
   protected readonly i18n = inject(LanguageService);
   protected readonly isMenuOpen = signal(false);
 
@@ -23,5 +25,8 @@ export class Header {
   protected changeLanguage(event: Event): void {
     const language = (event.target as HTMLSelectElement).value as SupportedLanguage;
     this.i18n.setLanguage(language);
+    this.document.location.assign(
+      `${this.i18n.pathForLanguage(language)}${this.document.location.hash}`,
+    );
   }
 }

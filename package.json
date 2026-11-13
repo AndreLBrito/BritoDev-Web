@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build && node scripts/generate-localized-pages.mjs",
     "deploy": "npm run build && wrangler deploy",
     "preview": "npm run build && wrangler dev",
     "lint": "eslint .",

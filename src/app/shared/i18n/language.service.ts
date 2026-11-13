@@ -5,6 +5,13 @@ import { Meta, Title } from '@angular/platform-browser';
 export type SupportedLanguage = 'pt-BR' | 'es' | 'en';
 type Page = 'home' | 'notFound';
 
+const siteOrigin = 'https://britodev.com.br';
+const languagePaths: Record<SupportedLanguage, string> = {
+  'pt-BR': '/pt-br/',
+  es: '/es/',
+  en: '/en/',
+};
+
 const portuguese = {
   'language.label': 'Selecionar idioma',
   'language.portuguese': 'Português',
@@ -574,6 +581,26 @@ export class LanguageService {
     }
   }
 
+  pathForLanguage(language: SupportedLanguage): string {
+    return languagePaths[language];
+  }
+
+  currentPath(): string {
+    return this.pathForLanguage(this.selectedLanguage());
+  }
+
+  localizedAnchor(fragment: string): string {
+    return `${this.currentPath()}#${fragment}`;
+  }
+
+  languageFromPath(path: string): SupportedLanguage | null {
+    const firstSegment = path.split(/[?#]/, 1)[0].split('/').filter(Boolean)[0]?.toLowerCase();
+    if (firstSegment === 'pt-br') return 'pt-BR';
+    if (firstSegment === 'es') return 'es';
+    if (firstSegment === 'en') return 'en';
+    return null;
+  }
+
   setPage(page: Page): void {
     this.currentPage.set(page);
   }
@@ -613,6 +640,7 @@ export class LanguageService {
   }
 
   private applyDocumentLanguage(language: SupportedLanguage, page: Page): void {
+    const canonicalUrl = `${siteOrigin}${this.pathForLanguage(language)}`;
     this.document.documentElement.lang = language;
     this.title.setTitle(this.t(page === 'home' ? 'meta.homeTitle' : 'meta.notFoundTitle'));
 
@@ -620,12 +648,19 @@ export class LanguageService {
     this.meta.updateTag({ content: description, name: 'description' });
     this.meta.updateTag({ content: this.t('meta.socialDescription'), property: 'og:description' });
     this.meta.updateTag({ content: this.title.getTitle(), property: 'og:title' });
+    this.meta.updateTag({ content: canonicalUrl, property: 'og:url' });
     this.meta.updateTag({ content: this.getOpenGraphLocale(language), property: 'og:locale' });
     this.meta.updateTag({ content: this.t('hero.photoAlt'), property: 'og:image:alt' });
     this.meta.updateTag({ content: this.t('meta.socialDescription'), name: 'twitter:description' });
     this.meta.updateTag({ content: this.title.getTitle(), name: 'twitter:title' });
     this.meta.updateTag({ content: this.t('hero.photoAlt'), name: 'twitter:image:alt' });
+    this.updateCanonical(canonicalUrl);
     this.updateStructuredData();
+  }
+
+  private updateCanonical(url: string): void {
+    const canonical = this.document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+    canonical?.setAttribute('href', url);
   }
 
   private getOpenGraphLocale(language: SupportedLanguage): string {
@@ -637,6 +672,11 @@ export class LanguageService {
   private updateStructuredData(): void {
     const element = this.document.getElementById('structured-data');
     if (!element) return;
+
+    const language = this.selectedLanguage();
+    const canonicalUrl = `${siteOrigin}${this.pathForLanguage(language)}`;
+    const description =
+      this.currentPage() === 'home' ? this.t('meta.description') : this.t('notFound.text');
 
     element.textContent = JSON.stringify({
       '@context': 'https://schema.org',
@@ -656,7 +696,7 @@ export class LanguageService {
           '@id': 'https://britodev.com.br/#andre-brito',
           name: 'André Brito',
           jobTitle: this.t('meta.jobTitle'),
-          url: 'https://britodev.com.br/',
+          url: canonicalUrl,
           image: 'https://britodev.com.br/images/andre-brito.jpg',
           email: 'contato@britodev.com.br',
           worksFor: { '@id': 'https://britodev.com.br/#organization' },
@@ -670,6 +710,15 @@ export class LanguageService {
             this.t('meta.integrations'),
           ],
           sameAs: ['https://github.com/AndreLBrito', 'https://www.linkedin.com/in/andrel-brito'],
+        },
+        {
+          '@type': 'WebPage',
+          '@id': `${canonicalUrl}#webpage`,
+          url: canonicalUrl,
+          name: this.title.getTitle(),
+          description,
+          inLanguage: language,
+          about: { '@id': 'https://britodev.com.br/#organization' },
         },
       ],
     });

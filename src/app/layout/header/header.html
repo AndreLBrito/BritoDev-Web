@@ -1,7 +1,7 @@
 <header class="site-header">
   <a class="skip-link" href="#main-content">{{ i18n.t('nav.skip') }}</a>
   <div class="header-content container">
-    <a class="brand" href="/" (click)="closeMenu()">
+    <a class="brand" [href]="i18n.currentPath()" (click)="closeMenu()">
       <span class="brand-mark" aria-hidden="true">B</span>
       <span>Brito<span>Dev</span></span>
     </a>
@@ -9,19 +9,27 @@
     <nav id="main-navigation" [attr.aria-label]="i18n.t('nav.main')" [class.is-open]="isMenuOpen()">
       <ul>
         <li>
-          <a href="/#services" (click)="closeMenu()">{{ i18n.t('nav.services') }}</a>
+          <a [href]="i18n.localizedAnchor('services')" (click)="closeMenu()">{{
+            i18n.t('nav.services')
+          }}</a>
         </li>
         <li>
-          <a href="/#solutions" (click)="closeMenu()">{{ i18n.t('nav.process') }}</a>
+          <a [href]="i18n.localizedAnchor('solutions')" (click)="closeMenu()">{{
+            i18n.t('nav.process')
+          }}</a>
         </li>
         <li>
-          <a href="/#projects" (click)="closeMenu()">{{ i18n.t('nav.projects') }}</a>
+          <a [href]="i18n.localizedAnchor('projects')" (click)="closeMenu()">{{
+            i18n.t('nav.projects')
+          }}</a>
         </li>
         <li>
-          <a href="/#about" (click)="closeMenu()">{{ i18n.t('nav.about') }}</a>
+          <a [href]="i18n.localizedAnchor('about')" (click)="closeMenu()">{{
+            i18n.t('nav.about')
+          }}</a>
         </li>
         <li>
-          <a class="nav-cta" href="/#contact" (click)="closeMenu()">
+          <a class="nav-cta" [href]="i18n.localizedAnchor('contact')" (click)="closeMenu()">
             {{ i18n.t('nav.contact') }}
           </a>
         </li>
