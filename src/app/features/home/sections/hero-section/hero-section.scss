@@ -45,10 +45,10 @@
 }
 
 h1 {
-  max-width: 12ch;
+  max-width: 18ch;
   margin-bottom: 1.5rem;
-  font-size: clamp(3.15rem, 7.2vw, 6.75rem);
-  line-height: 0.9;
+  font-size: clamp(2.6rem, 5.6vw, 5.6rem);
+  line-height: 0.95;
 }
 
 h1 span {
@@ -165,7 +165,7 @@ h1 span {
   bottom: 3%;
   left: -7%;
   display: grid;
-  min-width: 15rem;
+  width: min(22rem, calc(100% - 1rem));
   padding: 1rem 1.1rem;
   border-radius: var(--radius);
   gap: 0.25rem;
