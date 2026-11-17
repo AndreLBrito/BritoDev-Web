@@ -22,6 +22,8 @@
   </div>
   <div class="footer-bottom container">
     <p>© {{ currentYear }} BritoDev. {{ i18n.t('footer.credit') }}</p>
-    <a href="#main-content">{{ i18n.t('footer.backToTop') }} <span aria-hidden="true">↑</span></a>
+    <a [href]="i18n.localizedAnchor('main-content')">
+      {{ i18n.t('footer.backToTop') }} <span aria-hidden="true">↑</span>
+    </a>
   </div>
 </footer>

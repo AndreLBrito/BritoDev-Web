@@ -16,11 +16,11 @@
       </p>
 
       <div class="hero-actions">
-        <a class="button button-primary" href="#contact">
+        <a class="button button-primary" [href]="i18n.localizedAnchor('contact')">
           {{ i18n.t('hero.primaryAction') }}
           <svg lucideArrowRight aria-hidden="true"></svg>
         </a>
-        <a class="button button-secondary" href="#projects">
+        <a class="button button-secondary" [href]="i18n.localizedAnchor('projects')">
           {{ i18n.t('hero.secondaryAction') }}
         </a>
       </div>

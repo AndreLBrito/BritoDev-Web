@@ -1,5 +1,5 @@
 <header class="site-header">
-  <a class="skip-link" href="#main-content">{{ i18n.t('nav.skip') }}</a>
+  <a class="skip-link" [href]="i18n.localizedAnchor('main-content')">{{ i18n.t('nav.skip') }}</a>
   <div class="header-content container">
     <a class="brand" [href]="i18n.currentPath()" (click)="closeMenu()">
       <span class="brand-mark" aria-hidden="true">B</span>
