@@ -1,0 +1,10 @@
+@if (isVisible()) {
+  <a
+    class="back-to-top"
+    [href]="i18n.localizedAnchor('main-content')"
+    [attr.aria-label]="i18n.t('footer.backToTop')"
+  >
+    <span>{{ i18n.t('footer.backToTop') }}</span>
+    <svg lucideChevronUp aria-hidden="true"></svg>
+  </a>
+}
